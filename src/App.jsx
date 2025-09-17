@@ -1,6 +1,7 @@
 import CartPage from "./pages/CartPage";
 import ShopPage from "./pages/ShopPage";
 import { useState } from "react";
+import products from "./data/products";
 
 export default function App () {
   const initialCart = [];
@@ -47,6 +48,7 @@ export default function App () {
         <>
           <ShopPage 
             onAddToCart = {handleAddToCart}
+            products={products}
           />
           <CartPage 
             cart = {cart}

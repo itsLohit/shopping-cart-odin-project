@@ -44,7 +44,7 @@ export default function ShopPage ({products = [], onAddToCart}) {
                 imgSrc={product.imgSrc}
                 imgAlt={product.imgAlt}
                 price={product.price}
-                onAddtoCart = {onAddToCart}
+                onAddToCart = {onAddToCart}
               />
             ))
           )}

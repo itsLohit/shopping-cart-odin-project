@@ -1,0 +1,60 @@
+const products = [
+  {
+    id: '2d0269ab-75b6-48f8-88aa-0f9f6fa4ee87',
+    title: 'Majestic Mountain Graphic T-Shirt',
+    imgSrc: 'https://i.imgur.com/QkIa5tT.jpeg',
+    imgAlt: 'Majestic Mountain Graphic T-Shirt',
+    price: 44,
+    category: 'Clothes',
+  },
+  {
+    id: '87ae06e5-7096-4ce3-af2e-1b6f8623711b',
+    title: 'Classic Red Pullover Hoodie',
+    imgSrc: 'https://i.imgur.com/1twoaDy.jpeg',
+    imgAlt: 'Classic Red Pullover Hoodie',
+    price: 10,
+    category: 'Clothes',
+  },
+  {
+    id: '6895b836-0632-4da4-a961-e579ad7b2612',
+    title: 'Classic Heather Gray Hoodie',
+    imgSrc: 'https://i.imgur.com/cHddUCu.jpeg',
+    imgAlt: 'Classic Heather Gray Hoodie',
+    price: 69,
+    category: 'Clothes',
+  },
+  {
+    id: '804ec042-9b81-4392-ac3b-76a533912d3a',
+    title: 'Classic Grey Hooded Sweatshirt',
+    imgSrc: 'https://i.imgur.com/R2PN9Wq.jpeg',
+    imgAlt: 'Classic Grey Hooded Sweatshirt',
+    price: 90,
+    category: 'Clothes',
+  },
+  {
+    id: 'f8d2bcc7-dfaa-4ee2-8f9b-f1250a144a2b',
+    title: 'Classic Black Hooded Sweatshirt',
+    imgSrc: 'https://i.imgur.com/cSytoSD.jpeg',
+    imgAlt: 'Classic Black Hooded Sweatshirt',
+    price: 79,
+    category: 'Clothes',
+  },
+  {
+    id: '02064888-f93e-44e2-8504-d4dbbab6ce7b',
+    title: 'Classic Comfort Fit Joggers',
+    imgSrc: 'https://i.imgur.com/ZKGofuB.jpeg',
+    imgAlt: 'Classic Comfort Fit Joggers',
+    price: 25,
+    category: 'Clothes',
+  },
+  {
+    id: 'f6f635a9-61e4-42ca-aba9-634f75560914',
+    title: 'Classic Comfort Drawstring Joggers',
+    imgSrc: 'https://i.imgur.com/mp3rUty.jpeg',
+    imgAlt: 'Classic Comfort Drawstring Joggers',
+    price: 79,
+    category: 'Clothes',
+  },
+];
+
+export default products;
