@@ -1,30 +1,11 @@
 import CartItem from "../components/CartItem";
 import Header from "../components/Header";
-import { useState } from "react";
 
-export default function CartPage ({ cart: initialCart = [] }) {
-
-    const [cart, setCart] = useState(initialCart);
+export default function CartPage ({ cart = [], onIncrement, onDecrement }) {
     const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     const shipping = 50;
     const tax = Math.round(subtotal * 0.18);
     const total = subtotal + shipping + tax;
-
-    function onIncrement(id) {
-        setCart(cart =>
-          cart.map(item =>
-            item.id === id ? { ...item, quantity: item.quantity + 1 } : item
-          )
-        );
-    }
-
-    function onDecrement (id) {
-        setCart(cart =>
-          cart.map(item =>
-            item.id === id && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item
-          )
-        );
-    }
 
 
     return (

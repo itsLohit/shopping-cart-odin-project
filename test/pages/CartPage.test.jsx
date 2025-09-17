@@ -4,11 +4,40 @@ import { render, screen } from "@testing-library/react";
 import CartPage from "../../src/pages/CartPage";
 import { MemoryRouter } from "react-router";
 import userEvent from "@testing-library/user-event";
+import App from "../../src/App";
 
 const mockCart = [
   { id: 1, title: "Cool Hat", imgSrc: "hat.jpg", imgAlt: "A blue hat", price: 500, quantity: 2 },
   { id: 2, title: "Nice Shirt", imgSrc: "shirt.jpg", imgAlt: "A nice shirt", price: 800, quantity: 1 },
 ];
+
+function TestCartPageWrapper({ initialCart }) {
+  const [cart, setCart] = React.useState([...initialCart]);
+  function handleIncrement(id) {
+    setCart(cart =>
+      cart.map(item =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  }
+  function handleDecrement(id) {
+    setCart(cart =>
+      cart.map(item =>
+        item.id === id && item.quantity > 1
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+    );
+  }
+  return (
+    <CartPage
+      cart={cart}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+    />
+  );
+}
+
 
 describe('Cart Page', () => {
   it('renders the header and cart page title', () => {
@@ -84,7 +113,7 @@ describe('Cart Page', () => {
   it('updates item quantity, subtotal, and order summary when increment button is clicked', async () => {
     render(
       <MemoryRouter>
-        <CartPage cart={mockCart} />
+        <TestCartPageWrapper initialCart={mockCart} />
       </MemoryRouter>
     );
     const incrementBtns = screen.getAllByRole('button', { name: '+' });

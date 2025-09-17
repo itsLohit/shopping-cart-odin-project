@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Link } from "react-router"
 
-export default function Products ({title, imgSrc, imgAlt, price, onAddtoCart, id}) {
+export default function Products ({title, imgSrc, imgAlt, price, onAddToCart, id}) {
 
     const[count, setCount] = useState(0);
 
@@ -20,8 +20,8 @@ export default function Products ({title, imgSrc, imgAlt, price, onAddtoCart, id
         if (count === 0) {
             return false;
         }
-        if(typeof onAddtoCart === 'function') {
-            onAddtoCart({ title, imgSrc, price, count });
+        if(typeof onAddToCart === 'function') {
+            onAddToCart({ id, title, imgSrc, imgAlt, price, count });
             setCount(0);
         }
     }

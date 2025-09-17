@@ -129,14 +129,14 @@ describe ('Products', () => {
         expect(addToCartBtn).toBeInTheDocument();
     });
     it ('renders the cart nav when user clicked add to cart', async () => {
-        const onAddtoCart = vi.fn();
+        const onAddToCart = vi.fn();
         render (
           <MemoryRouter>
             <Products
               title="Cool Hat"
               imgSrc="hat.jpg"
               price="499"
-              onAddtoCart={onAddtoCart}
+              onAddToCart={onAddToCart}
             />
           </MemoryRouter>
         );
@@ -145,8 +145,8 @@ describe ('Products', () => {
          await userEvent.click(incrementButton);
          await userEvent.click(incrementButton);
          await userEvent.click(addToCartBtn);
-         expect(onAddtoCart).toHaveBeenCalledTimes(1);
-         expect(onAddtoCart).toHaveBeenCalledWith({
+         expect(onAddToCart).toHaveBeenCalledTimes(1);
+         expect(onAddToCart).toHaveBeenCalledWith({
             title: "Cool Hat",
             imgSrc: "hat.jpg",
             price: "499",
@@ -154,26 +154,26 @@ describe ('Products', () => {
          });
     });
     it ('disable the add to cart when count is zero', async () => {
-        const onAddtoCart = vi.fn();
+        const onAddToCart = vi.fn();
         render (
           <MemoryRouter>
             <Products
               title="Cool Hat"
               imgSrc="hat.jpg"
               price="499"
-              onAddtoCart={onAddtoCart}
+              onAddToCart={onAddToCart}
             />
           </MemoryRouter>
         );
         const addToCartBtn = screen.getByRole('button', {name: /add to cart/i});
         const incrementButton = screen.getByRole('button', {name: '+'});
          await userEvent.click(addToCartBtn);
-         expect(onAddtoCart).toHaveBeenCalledTimes(0);
+         expect(onAddToCart).toHaveBeenCalledTimes(0);
          await userEvent.click(incrementButton);
          await userEvent.click(incrementButton);
          await userEvent.click(addToCartBtn);
-         expect(onAddtoCart).toHaveBeenCalledTimes(1);
-         expect(onAddtoCart).toHaveBeenCalledWith({
+         expect(onAddToCart).toHaveBeenCalledTimes(1);
+         expect(onAddToCart).toHaveBeenCalledWith({
             title: "Cool Hat",
             imgSrc: "hat.jpg",
             price: "499",
@@ -181,14 +181,14 @@ describe ('Products', () => {
          });
     });
     it ('reset count after add to cart is clicked', async () => {
-        const onAddtoCart = vi.fn();
+        const onAddToCart = vi.fn();
         render (
           <MemoryRouter>
             <Products
               title="Cool Hat"
               imgSrc="hat.jpg"
               price="499"
-              onAddtoCart={onAddtoCart}
+              onAddToCart={onAddToCart}
             />
           </MemoryRouter>
         );
@@ -196,14 +196,14 @@ describe ('Products', () => {
         const incrementButton = screen.getByRole('button', {name: '+'});
         const countDisplay = screen.getByTestId('count-display');
          await userEvent.click(addToCartBtn);
-         expect(onAddtoCart).toHaveBeenCalledTimes(0);
+         expect(onAddToCart).toHaveBeenCalledTimes(0);
          await userEvent.click(incrementButton);
          await userEvent.click(incrementButton);
          expect(countDisplay).toHaveTextContent('2');
          await userEvent.click(addToCartBtn);
          expect(countDisplay).toHaveTextContent('0');
-         expect(onAddtoCart).toHaveBeenCalledTimes(1);
-         expect(onAddtoCart).toHaveBeenCalledWith({
+         expect(onAddToCart).toHaveBeenCalledTimes(1);
+         expect(onAddToCart).toHaveBeenCalledWith({
             title: "Cool Hat",
             imgSrc: "hat.jpg",
             price: "499",

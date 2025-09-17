@@ -4,7 +4,7 @@ import Products from "../components/Products";
 import { useState } from "react";
 
 
-export default function ShopPage ({products = []}) {
+export default function ShopPage ({products = [], onAddToCart}) {
 
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
@@ -44,6 +44,7 @@ export default function ShopPage ({products = []}) {
                 imgSrc={product.imgSrc}
                 imgAlt={product.imgAlt}
                 price={product.price}
+                onAddtoCart = {onAddToCart}
               />
             ))
           )}
