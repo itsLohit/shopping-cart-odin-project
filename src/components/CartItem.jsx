@@ -1,5 +1,4 @@
 import { Link } from "react-router";
-import { useState } from "react";
 
 export default function CartItem ({id, title, imgSrc, imgAlt, price, quantity, onIncrement, onDecrement}) {
 
@@ -28,7 +27,7 @@ export default function CartItem ({id, title, imgSrc, imgAlt, price, quantity, o
             <div className="item-heading"><Link to = {`/shop/product/${id}`}><h2>{title}</h2></Link></div>
             <div className="item-price-container">
                 <div className="item-price" data-testid = 'item-price'>{price}</div>
-                <div className="item-subtotal">{itemSubTotal}</div>
+                <div className="item-subtotal" data-testid="item-subtotal">{itemSubTotal}</div>
             </div>
           </div>
           <div className="quantity-container">
