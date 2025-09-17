@@ -10,7 +10,6 @@ export default function CartPage ({ cart = [], onIncrement, onDecrement }) {
 
     return (
         <>
-        <Header />
         <div className="title"><h1>Shopping Cart</h1></div>
         <div className="cart-container">
             <div className="items-container">

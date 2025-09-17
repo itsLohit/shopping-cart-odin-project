@@ -1,9 +1,15 @@
-import CartPage from "./pages/CartPage";
-import ShopPage from "./pages/ShopPage";
+import { useParams } from "react-router";
 import { useState } from "react";
 import products from "./data/products";
+import Header from "./components/Header";
+import HomePage from "./pages/HomePage";
+import ShopPage from "./pages/ShopPage";
+import CartPage from "./pages/CartPage";
+import ProductDetailsPage from "./pages/ProductDetailsPage";
+
 
 export default function App () {
+  const { name, productId } = useParams();
   const initialCart = [];
   const [cart, setCart] = useState(initialCart);
 
@@ -42,20 +48,39 @@ export default function App () {
     );
   }
 
+  let page;
+  if (productId) {
+    const product = products.find((p) => p.id === productId);
+    page = <ProductDetailsPage product={product} />;
+  } else if (name === "home") {
+    page = <HomePage />;
+  } else if (name === "shop") {
+    page = (
+      <ShopPage
+        onAddToCart={handleAddToCart}
+        products={products}
+      />
+    );
+  } else if (name === "cart") {
+    page = (
+      <CartPage
+        cart={cart}
+        setCart={setCart}
+        onIncrement={handleIncrement}
+        onDecrement={handleDecrement}
+      />
+    );
+  } else {
+    page = <HomePage />;
+  }
+
 
 
     return (
         <>
-          <ShopPage 
-            onAddToCart = {handleAddToCart}
-            products={products}
-          />
-          <CartPage 
-            cart = {cart}
-            setCart = {setCart}
-            onIncrement = {handleIncrement}
-            onDecrement = {handleDecrement}
-          />
+
+          <Header />
+          {page}
         </>
     )
 }

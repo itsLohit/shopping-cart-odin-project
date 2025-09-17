@@ -26,7 +26,6 @@ export default function ShopPage ({products = [], onAddToCart}) {
 
     return (
         <>
-          <Header />
           <SearchBar 
             onSearchChange={handleSearchTermChange}
             onFilterChange={handleFilterChange}

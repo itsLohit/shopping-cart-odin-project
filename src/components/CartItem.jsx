@@ -24,7 +24,7 @@ export default function CartItem ({id, title, imgSrc, imgAlt, price, quantity, o
             <img src={imgSrc} alt={imgAlt} />
           </div>
           <div className="item-info-container">
-            <div className="item-heading"><Link to = {`/shop/product/${id}`}><h2>{title}</h2></Link></div>
+            <div className="item-heading"><Link to = {`/product/${id}`}><h2>{title}</h2></Link></div>
             <div className="item-price-container">
                 <div className="item-price" data-testid = 'item-price'>{price}</div>
                 <div className="item-subtotal" data-testid="item-subtotal">{itemSubTotal}</div>

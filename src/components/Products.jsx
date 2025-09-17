@@ -32,7 +32,7 @@ export default function Products ({title, imgSrc, imgAlt, price, onAddToCart, id
             <img src={imgSrc} alt={imgAlt} />
           </div>
           <div className="heading">
-            <Link to = {`shop/product/${id}`}><h2>{title}</h2></Link>
+            <Link to = {`/product/${id}`}><h2>{title}</h2></Link>
           </div>
           <div className="product-price" data-testid = 'product-price'>{price}</div>
           <div className="count-container">

@@ -1,8 +1,7 @@
 export default function ProductDetailsPage({ product }) {
-  if (!product) return null;
-
+  if (!product) return <div>Product not found.</div>;
   return (
-    <div className="product-details">
+    <div>
       <img src={product.imgSrc} alt={product.imgAlt} />
       <h1>{product.title}</h1>
       <p>${product.price}</p>

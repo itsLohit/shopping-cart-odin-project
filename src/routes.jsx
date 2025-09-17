@@ -1,20 +1,17 @@
-import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import ShopPage from "./pages/ShopPage";
-import CartPage from "./pages/CartPage";
 import ErrorPage from "./pages/ErrorPage";
 
-const router = createBrowserRouter([
+const routes = [
   {
-    path: "/",
-    element: <App />,           // App holds the state/context and header
+    path: "/:name?",
+    element: <App />,
     errorElement: <ErrorPage />,
-    children: [
-      { path: "shop", element: <ShopPage /> },
-      { path: "cart", element: <CartPage /> },
-      { index: true, element: <div><h1>Welcome to Sippy Cart</h1></div> }
-    ]
-  }
-]);
+  },
+  {
+    path: "/product/:productId",
+    element: <App />,
+    errorElement: <ErrorPage />,
+  },
+];
 
-export default router;
+export default routes;
