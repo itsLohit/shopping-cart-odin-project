@@ -48,6 +48,13 @@ export default function App () {
     );
   }
 
+
+  function handleDelete (id) {
+        setCart(
+          cart.filter(item => item.id !== id)
+        );
+    }
+
   let page;
   if (productId) {
     const product = products.find((p) => p.id === productId);
@@ -68,6 +75,7 @@ export default function App () {
         setCart={setCart}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
+        onDelete={handleDelete}
       />
     );
   } else {

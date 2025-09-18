@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-export default function CartItem ({id, title, imgSrc, imgAlt, price, quantity, onIncrement, onDecrement}) {
+export default function CartItem ({id, title, imgSrc, imgAlt, price, quantity, onIncrement, onDecrement, onDelete}) {
 
       
     function handleClickIncrementBtn() {
@@ -35,6 +35,7 @@ export default function CartItem ({id, title, imgSrc, imgAlt, price, quantity, o
             <div className="count-display" data-testid = 'count-display'>{quantity}</div>
             <button onClick={handleClickIncrementBtn}>+</button>
           </div>
+          <button className="delete-button" data-testid='delete-item' onClick={() => onDelete && onDelete(id)}>Delete</button>
         </div>
     )
 }

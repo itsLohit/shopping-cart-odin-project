@@ -82,9 +82,7 @@ describe('Cart Page', () => {
     await userEvent.click(decrementBtns[0]); // Cool Hat goes from 2 -> 1
     expect(screen.getAllByTestId('count-display')[0]).toHaveTextContent('1');
     expect(screen.getAllByTestId('item-subtotal')[0]).toHaveTextContent('500');
-    // Subtotal now: 500 + 800 = 1300
     expect(screen.getByTestId('checkout-subtotal')).toHaveTextContent('Subtotal: 1300');
-    // Total: 1300 + 50 + 234 = 1584
     expect(screen.getByTestId('order-total')).toHaveTextContent('Total: 1584');
   });
 
@@ -94,30 +92,48 @@ describe('Cart Page', () => {
         <TestCartPageWrapper initialCart={mockCart} />
       </MemoryRouter>
     );
-    // Decrement Nice Shirt from 1 -> 0 (should remove)
     const decrementBtns = screen.getAllByRole('button', { name: '-' });
     await userEvent.click(decrementBtns[1]);
     expect(screen.queryByText('Nice Shirt')).not.toBeInTheDocument();
     expect(screen.queryByAltText('A nice shirt')).not.toBeInTheDocument();
-    // Cart summary recalculates
     expect(screen.getByTestId('checkout-subtotal')).toHaveTextContent('Subtotal: 1000'); // (Cool Hat's subtotal if still present)
   });
 
-  it('shows empty cart message and disables checkout button when cart empty', async () => {
-    render(
+  it('removes item from cart when delete button is clicked', async () => {
+    let cart = [
+      { id: 1, title: "Hat", imgSrc: "x.jpg", imgAlt: "Hat", price: 10, quantity: 2 },
+      { id: 2, title: "Shirt", imgSrc: "y.jpg", imgAlt: "Shirt", price: 20, quantity: 1 }
+    ];
+    const handleDelete = (id) => {
+      cart = cart.filter(item => item.id !== id);
+      rerender(
+        <MemoryRouter>
+          <CartPage cart={cart} onDelete={handleDelete}/>
+        </MemoryRouter>
+      );
+    };
+    const { rerender } = render(
       <MemoryRouter>
-        <TestCartPageWrapper initialCart={[{ id: 1, title: "Cool Hat", imgSrc: "hat.jpg", imgAlt: "A blue hat", price: 500, quantity: 1 }]} />
+        <CartPage cart={cart} onDelete={handleDelete}/>
       </MemoryRouter>
     );
-    // Decrement Cool Hat from 1 -> 0 (should remove, cart empty)
-    const decrementBtn = screen.getAllByRole('button', { name: '-' })[0];
-    await userEvent.click(decrementBtn);
-    expect(screen.queryByText('Cool Hat')).not.toBeInTheDocument();
-    expect(screen.getByTestId('checkout-subtotal')).toHaveTextContent('Subtotal: 0');
-    expect(screen.getByTestId('order-total')).toHaveTextContent('Total: 50');
-    // Check for empty cart UI or checkout button disabled (update CartPage as needed)
-    // For example:
-    // expect(screen.getByText(/your cart is empty/i)).toBeInTheDocument();
-    // expect(screen.getByRole('button', { name: /proceed to checkout/i })).toBeDisabled();
+    expect(screen.getByText("Hat")).toBeInTheDocument();
+    expect(screen.getByText("Shirt")).toBeInTheDocument();
+    const deleteButtons = screen.getAllByTestId("delete-item");
+    await userEvent.click(deleteButtons[0]); // delete "Hat"
+    expect(screen.queryByText("Hat")).not.toBeInTheDocument();
+    expect(screen.getByText("Shirt")).toBeInTheDocument();
+  });
+
+  it('shows "Your cart is empty" message when cart is empty', () => {
+    render(
+      <MemoryRouter>
+        <CartPage cart={[]} />
+      </MemoryRouter>
+    );
+    expect(screen.getByText(/your cart is empty/i)).toBeInTheDocument();
+    expect(screen.queryByTestId('checkout-subtotal')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('order-total')).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /proceed to checkout/i })).not.toBeInTheDocument();
   });
 });

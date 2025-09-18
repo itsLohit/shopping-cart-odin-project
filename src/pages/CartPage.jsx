@@ -1,7 +1,16 @@
 import CartItem from "../components/CartItem";
 import Header from "../components/Header";
 
-export default function CartPage ({ cart = [], onIncrement, onDecrement }) {
+export default function CartPage ({ cart = [], onIncrement, onDecrement, onDelete }) {
+
+    if (cart.length === 0) {
+      return (
+        <div className="empty-cart-message">
+          Your cart is empty.
+        </div>
+      )
+    }
+
     const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     const shipping = 50;
     const tax = Math.round(subtotal * 0.18);
@@ -24,6 +33,7 @@ export default function CartPage ({ cart = [], onIncrement, onDecrement }) {
                       quantity={item.quantity}
                       onIncrement={onIncrement}
                       onDecrement={onDecrement}
+                      onDelete={onDelete}
                     />
                 ))}
             </div>

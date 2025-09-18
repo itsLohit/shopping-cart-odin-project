@@ -99,4 +99,24 @@ describe('CartItem', () => {
     expect(screen.getByText("3")).toBeInTheDocument();
     expect(screen.getByText("1500")).toBeInTheDocument();
   });
+
+  it('calls onDelete with correct id when delete button is clicked', async () => {
+    const handleDelete = vi.fn();
+    render(
+      <MemoryRouter>
+        <CartItem
+          id={1}
+          title="Hat"
+          imgSrc="x.jpg"
+          imgAlt="Hat"
+          price={10}
+          quantity={2}
+          onDelete={handleDelete}
+        />
+      </MemoryRouter>
+    );
+    const deleteButton = screen.getByTestId('delete-item');
+    await userEvent.click(deleteButton);
+    expect(handleDelete).toHaveBeenCalledWith(1);
+  });
 });
