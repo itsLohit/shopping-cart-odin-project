@@ -1,0 +1,38 @@
+.errorContainer {
+  background: var(--accent-color);
+  border-radius: 1.1rem;
+  padding: 3rem 2rem;
+  margin: 4rem auto;
+  max-width: 450px;
+  box-shadow: 0 0.17rem 1.1rem rgba(0,0,0,0.11);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.errorHeading {
+  color: var(--warning-color);
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.7rem;
+  text-align: center;
+}
+
+.errorLink {
+  color: var(--primary-color);
+  background: var(--card-bg-color);
+  padding: 0.5rem 1.4rem;
+  border-radius: 0.6rem;
+  font-weight: 700;
+  font-size: 1.18rem;
+  box-shadow: 0 0 0.5rem var(--primary-color);
+  border: none;
+  transition: background 0.16s, color 0.16s;
+  text-align: center;
+  margin-top: 1.2rem;
+  text-decoration: none;
+}
+.errorLink:hover {
+  background: var(--primary-color);
+  color: #fff;
+}

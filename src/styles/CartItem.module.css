@@ -1,0 +1,100 @@
+.cartItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  background: var(--card-bg-color);
+  border-radius: 0.8rem;
+  box-shadow: 0 0.15rem 1.25rem rgba(0,0,0,0.08);
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  border: 1.5px solid var(--border-color);
+}
+
+.itemImg img {
+  width: 7rem;
+  height: 7rem;
+  object-fit: cover;
+  border-radius: 0.6rem;
+  background: var(--accent-color);
+  box-shadow: 0 0.1rem 0.8rem var(--accent-color);
+}
+
+.itemInfoContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.itemHeading h2 {
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+}
+
+.itemPriceContainer {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.7rem;
+}
+.itemPrice {
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+.itemSubtotal {
+  font-size: 1rem;
+  color: var(--success-color);
+  font-weight: 500;
+}
+
+.quantityContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.countDisplay {
+  min-width: 2.2rem;
+  text-align: center;
+  font-size: 1.15rem;
+  background: var(--accent-color);
+  border-radius: 0.4rem;
+  padding: 0.19rem 0.3rem;
+  font-family: monospace;
+  color: var(--text-color);
+  box-shadow: 0 0 0.5rem var(--secondary-color);
+}
+
+button {
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 1.3rem;
+  border-radius: 0.5rem;
+  padding: 0.23rem 0.85rem;
+  font-weight: 700;
+  margin: 0 0.13rem;
+  border: none;
+  transition: background 0.18s;
+}
+button:hover {
+  background: var(--primary-hover);
+}
+
+.deleteButton {
+  margin-left: 1.5rem;
+  background: var(--warning-color);
+  color: #fff;
+  padding: 0.33rem 1.1rem;
+  border-radius: 0.45rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  margin-top: 0.3rem;
+  transition: background 0.16s;
+  box-shadow: 0 0 0.5rem var(--warning-color);
+}
+.deleteButton:hover {
+  background: var(--cyber-pink);
+}

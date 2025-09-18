@@ -1,0 +1,58 @@
+.homeHero {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem 2rem 1.5rem;
+  background: linear-gradient(120deg, var(--accent-color) 70%, var(--neon-purple) 100%);
+  border-radius: 0.7rem;
+  margin: 3rem auto;
+  max-width: 800px;
+  box-shadow: 0 0.3rem 1.2rem rgba(0,0,0,0.12);
+}
+
+.mainHeading {
+  font-size: 2.9rem;
+  text-align: center;
+  color: var(--electric-blue);
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 900;
+  margin-bottom: 2rem;
+  letter-spacing: 0.08rem;
+}
+
+.homeDescription {
+  font-size: 1.22rem;
+  color: var(--text-color);
+  background: rgba(255,255,255,0.07);
+  border-radius: 0.4rem;
+  padding: 1.1rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0.1rem 0.5rem var(--accent-color);
+}
+
+.ctaButton {
+  display: inline-block;
+  background: var(--secondary-color);
+  color: var(--background-color);
+  font-size: 1.28rem;
+  font-weight: 700;
+  padding: 0.75rem 2.3rem;
+  border: none;
+  border-radius: 0.85rem;
+  box-shadow: 0 0 1.1rem var(--secondary-color);
+  margin-bottom: 2.2rem;
+  transition: background 0.13s, box-shadow 0.15s;
+}
+.ctaButton:hover {
+  background: var(--primary-color);
+  box-shadow: 0 0 2rem var(--primary-color);
+}
+
+.subText {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--success-color);
+  margin-top: 1.5rem;
+}

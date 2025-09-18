@@ -1,3 +1,4 @@
+import styles from '../styles/Products.module.css';
 import { useState } from "react"
 import { Link } from "react-router"
 
@@ -27,21 +28,23 @@ export default function Products ({title, imgSrc, imgAlt, price, onAddToCart, id
     }
 
     return (
-        <article>
-            <div className="product-image">
+        <article className={styles.productCard}>
+            <div className={styles.productImage}>
             <img src={imgSrc} alt={imgAlt} />
           </div>
-          <div className="heading">
-            <Link to = {`/product/${id}`}><h2>{title}</h2></Link>
-          </div>
-          <div className="product-price" data-testid = 'product-price'>{price}</div>
-          <div className="count-container">
-            <button onClick={handleClickDecrementBtn}>-</button>
-            <div className="count-display" data-testid = 'count-display'>{count}</div>
-            <button onClick={handleClickIncrementBtn}>+</button>
-          </div>
-          <div>
-            <button onClick={handleAddToCart}>Add to cart</button>
+          <div className={styles.cardInfo}>
+              <div className={styles.heading}>
+                <Link to = {`/product/${id}`}><h2>{title}</h2></Link>
+              </div>
+              <div className={styles.productPrice} data-testid = 'product-price'>${price}</div>
+              <div className={styles.countContainer}>
+                <button onClick={handleClickDecrementBtn}>-</button>
+                <div className={styles.countDisplay} data-testid = 'count-display'>{count}</div>
+                <button onClick={handleClickIncrementBtn}>+</button>
+              </div>
+              <div>
+                <button className={styles.addToCartButton} onClick={handleAddToCart}>Add to cart</button>
+              </div>
           </div>
         </article>
     )

@@ -1,5 +1,6 @@
 import CartItem from "../components/CartItem";
 import Header from "../components/Header";
+import styles from "../styles/CartPage.module.css";
 
 export default function CartPage ({ cart = [], onIncrement, onDecrement, onDelete }) {
 
@@ -19,9 +20,12 @@ export default function CartPage ({ cart = [], onIncrement, onDecrement, onDelet
 
     return (
         <>
-        <div className="title"><h1>Shopping Cart</h1></div>
-        <div className="cart-container">
-            <div className="items-container">
+        <div className={styles.title}><h1>Shopping Cart</h1></div>
+        <div className={styles.cartInfoNote}>
+          Review your items below before proceeding to checkout.
+        </div>
+        <div className={styles.cartContainer}>
+            <div className={styles.itemsContainer}>
                 {cart.map(item => (
                     <CartItem
                       key={item.id}
@@ -37,15 +41,15 @@ export default function CartPage ({ cart = [], onIncrement, onDecrement, onDelet
                     />
                 ))}
             </div>
-            <div className="checkout-container">
-                <div className="checkout-box-heading"><h2>Order Summary</h2></div>
-                <div className="cost-container">
-                    <div data-testid="checkout-subtotal">Subtotal: {subtotal}</div>
-                    <div data-testid="checkout-shipping">Shipping: {shipping}</div>
-                    <div data-testid="checkout-tax">Tax: {tax}</div>
+            <div className={styles.checkoutContainer}>
+                <div className={styles.checkoutBoxHeading}><h2>Order Summary</h2></div>
+                <div className={styles.costContainer}>
+                    <div data-testid="checkout-subtotal">Subtotal: ${subtotal}</div>
+                    <div data-testid="checkout-shipping">Shipping: ${shipping}</div>
+                    <div data-testid="checkout-tax">Tax (18%): ${tax}</div>
                 </div>
-                <div className="total-cost" data-testid="order-total">Total: {total}</div>
-                <button>Proceed to checkout</button>
+                <div className={styles.totalCost} data-testid="order-total">Total: {total}</div>
+                <button className={styles.checkoutButton}>Proceed to checkout</button>
             </div>
         </div>
         </>

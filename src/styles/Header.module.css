@@ -1,0 +1,49 @@
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--accent-color);
+  padding: 1.25rem 2rem;
+  box-shadow: 0 0.2rem 1.5rem rgba(0,0,0,0.08); 
+}
+
+.logo {
+  font-size: 2.1rem;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 700;
+  color: var(--electric-blue);
+  letter-spacing: 0.1rem; 
+}
+
+.navLinks {
+  display: flex;
+  gap: 3rem;
+}
+
+.navLink {
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 1.15rem;
+  padding-bottom: 0.2rem; 
+  transition: color 0.2s, border-bottom 0.2s;
+  border-bottom: 0.2rem solid transparent;
+}
+
+.navLink:hover, .navLink.active {
+  color: var(--primary-color);
+  border-bottom: 0.2rem solid var(--primary-color);
+}
+
+.cartBadge {
+  display: inline-block;
+  min-width: 1.3rem;     
+  background: var(--primary-color);
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 50%;
+  padding: 0.2rem 0.5rem 0.06rem 0.5rem; 
+  margin-left: 0.5rem;   
+  vertical-align: middle;
+  box-shadow: 0 0 0.4rem var(--primary-color); 
+}

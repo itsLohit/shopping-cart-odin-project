@@ -1,4 +1,4 @@
-import Header from "../components/Header";
+import styles from '../styles/ShopPage.module.css';
 import SearchBar from "../components/SearchBar";
 import Products from "../components/Products";
 import { useState } from "react";
@@ -25,29 +25,33 @@ export default function ShopPage ({products = [], onAddToCart}) {
   
 
     return (
-        <>
-          <SearchBar 
-            onSearchChange={handleSearchTermChange}
-            onFilterChange={handleFilterChange}
-            activeCategory = {activeCategory}
-          />
+        <div className={styles.shopContainer}>
+          <div className={styles.filterSection}>
+            <SearchBar
+              onSearchChange={handleSearchTermChange}
+              onFilterChange={handleFilterChange}
+              activeCategory = {activeCategory}
+            />
+          </div>
 
-          {displayedProducts.length === 0 ? (
-            <div role="status">No products found</div>
-          ) : (
-            displayedProducts.map(product => (
-              <Products
-                key={product.id}
-                id={product.id}
-                title={product.title}
-                imgSrc={product.imgSrc}
-                imgAlt={product.imgAlt}
-                price={product.price}
-                onAddToCart = {onAddToCart}
-              />
-            ))
-          )}
+          <div className={styles.productsGrid}>
+            {displayedProducts.length === 0 ? (
+              <div role="status" className={styles.noProductsMessage}>No products found</div>
+            ) : (
+              displayedProducts.map(product => (
+                <Products
+                  key={product.id}
+                  id={product.id}
+                  title={product.title}
+                  imgSrc={product.imgSrc}
+                  imgAlt={product.imgAlt}
+                  price={product.price}
+                  onAddToCart = {onAddToCart}
+                />
+              ))
+            )}
+          </div>
 
-        </>
+        </div>
     )
 }

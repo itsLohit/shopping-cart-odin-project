@@ -1,3 +1,4 @@
+import styles from '../styles/CartItem.module.css';
 import { Link } from "react-router";
 
 export default function CartItem ({id, title, imgSrc, imgAlt, price, quantity, onIncrement, onDecrement, onDelete}) {
@@ -19,23 +20,23 @@ export default function CartItem ({id, title, imgSrc, imgAlt, price, quantity, o
     const itemSubTotal = price * quantity;
 
     return (
-        <div className="cart-item">
-          <div className="item-img">
+        <div className={styles.cartItem}>
+          <div className={styles.itemImg}>
             <img src={imgSrc} alt={imgAlt} />
           </div>
-          <div className="item-info-container">
-            <div className="item-heading"><Link to = {`/product/${id}`}><h2>{title}</h2></Link></div>
-            <div className="item-price-container">
-                <div className="item-price" data-testid = 'item-price'>{price}</div>
-                <div className="item-subtotal" data-testid="item-subtotal">{itemSubTotal}</div>
+          <div className={styles.itemInfoContainer}>
+            <div className={styles.itemHeading}><Link to = {`/product/${id}`}><h2>{title}</h2></Link></div>
+            <div className={styles.itemPriceContainer}>
+                <div className={styles.itemPrice} data-testid = 'item-price'>${price}</div>
+                <div className={styles.itemSubtotal} data-testid="item-subtotal">Subtotal: ${itemSubTotal}</div>
             </div>
           </div>
-          <div className="quantity-container">
+          <div className={styles.quantityContainer}>
             <button onClick={handleClickDecrementBtn}>-</button>
-            <div className="count-display" data-testid = 'count-display'>{quantity}</div>
+            <div className={styles.countDisplay} data-testid = 'count-display'>{quantity}</div>
             <button onClick={handleClickIncrementBtn}>+</button>
           </div>
-          <button className="delete-button" data-testid='delete-item' onClick={() => onDelete && onDelete(id)}>Delete</button>
+          <button className={styles.deleteButton} data-testid='delete-item' onClick={() => onDelete && onDelete(id)}>Delete</button>
         </div>
     )
 }

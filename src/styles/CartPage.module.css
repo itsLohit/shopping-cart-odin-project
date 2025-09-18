@@ -1,0 +1,103 @@
+.cartContainer {
+  display: flex;
+  gap: 2.8rem;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2.5rem 4vw;
+  min-height: 78vh;
+  background: var(--background-color);
+}
+
+.itemsContainer {
+  width: 40rem;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 1.3rem;
+}
+
+.title {
+  text-align: center;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 2.4rem;
+  color: var(--electric-blue);
+  margin-top: 3.5rem;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.04rem;
+}
+
+.cartInfoNote {
+  text-align: center;
+  margin-bottom: 2.3rem;
+  color: var(--subtle-text-color);
+  font-size: 1.18rem;
+  font-weight: 600;
+  letter-spacing: 0.01rem;
+}
+
+.checkoutContainer {
+  background: var(--card-bg-color);
+  border-radius: 1rem;
+  box-shadow: 0 0.13rem 1rem rgba(0,0,0,0.08);
+  padding: 1.4rem 2rem 2rem 2rem;
+  margin-left: 2rem;
+  min-width: 22rem;
+  border: 2px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkoutBoxHeading {
+  font-size: 1.45rem;
+  color: var(--primary-color);
+  font-weight: 800;
+  margin-bottom: 1.4rem;
+}
+
+.costContainer {
+  width: 100%;
+  margin-bottom: 1.2rem;
+  font-size: 1.13rem;
+  color: var(--text-color);
+}
+
+.costContainer > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.16rem 0;
+  margin-bottom: 0.6rem;
+}
+
+.totalCost {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  margin: 1.1rem 0 1.5rem 0;
+  letter-spacing: 0.02rem;
+  width: 100%;
+  text-align: right;
+}
+
+.checkoutButton {
+  background: var(--secondary-color);
+  color: var(--card-bg-color);
+  font-size: 1.13rem;
+  font-weight: 700;
+  border-radius: 0.7rem;
+  padding: 0.7rem 2.2rem;
+  box-shadow: 0 0 0.55rem var(--secondary-color);
+  border: none;
+  margin-top: 0.7rem;
+  cursor: pointer;
+  transition: background 0.16s, box-shadow 0.16s;
+}
+.checkoutButton:hover:enabled {
+  background: var(--primary-color);
+  box-shadow: 0 0 1.1rem var(--primary-color);
+}
+.checkoutButton:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
