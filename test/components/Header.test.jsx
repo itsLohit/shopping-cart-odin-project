@@ -31,5 +31,32 @@ describe ('Header', () => {
         const cart = within(navLinks).getByRole('link', {name: /cart/i});
         expect(cart).toBeInTheDocument();
         expect(cart).toHaveAttribute('href', '/cart');
+    });
+
+    it ('displays cart item count and updates when the cart changes', () => {
+        const cart = [
+          { id: 1, title: "Hat", quantity: 2 },
+          { id: 2, title: "Shirt", quantity: 3 },
+        ];
+
+        const { rerender } = render(
+          <MemoryRouter>
+            <Header cart={cart} />
+          </MemoryRouter>
+        );
+
+
+        expect(screen.getByTestId("cart-count")).toHaveTextContent("5");
+        const newCart = [
+          { id: 1, title: "Hat", quantity: 2 },
+          { id: 2, title: "Shirt", quantity: 3 },
+          { id: 3, title: "Shoes", quantity: 1 },
+        ];
+
+        rerender (
+          <MemoryRouter><Header cart={newCart}/></MemoryRouter>
+        );
+
+        expect(screen.getByTestId("cart-count")).toHaveTextContent("6");
     })
 });

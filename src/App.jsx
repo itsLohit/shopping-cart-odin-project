@@ -79,7 +79,9 @@ export default function App () {
     return (
         <>
 
-          <Header />
+          <Header 
+            cart={cart}
+          />
           {page}
         </>
     )

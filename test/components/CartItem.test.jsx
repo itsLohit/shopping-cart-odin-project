@@ -37,7 +37,7 @@ describe('CartItem', () => {
     const productTitle = screen.getByRole('heading', { name: /cool hat/i });
     expect(productTitle).toBeInTheDocument();
     const parentLink = productTitle.closest('a');
-    expect(parentLink).toHaveAttribute('href', '/shop/product/1');
+    expect(parentLink).toHaveAttribute('href', '/product/1');
   });
 
   it('renders the product price', () => {

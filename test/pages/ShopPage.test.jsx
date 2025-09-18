@@ -25,14 +25,6 @@ const mockProducts = [
 ];
 
 describe('Shop Page', () => {
-    it('renders Header in the shop page', () => {
-        render (
-                  <MemoryRouter><ShopPage /></MemoryRouter>
-                );
-        const logo = screen.getByRole('link', { name: /sippy cart/i });
-        expect(logo).toBeInTheDocument();
-    });
-
     it('renders and display the searchBar', () => {
         render (
                   <MemoryRouter><ShopPage /></MemoryRouter>

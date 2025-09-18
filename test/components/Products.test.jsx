@@ -51,7 +51,7 @@ describe ('Products', () => {
         const productTitle = screen.getByRole('heading', {name: /cool hat/i});
         expect(productTitle).toBeInTheDocument();
         const parentLink = productTitle.closest('a');
-        expect(parentLink).toHaveAttribute('href', '/shop/product/12');
+        expect(parentLink).toHaveAttribute('href', '/product/12');
     });
     it ('renders the product price', () => {
         render (
