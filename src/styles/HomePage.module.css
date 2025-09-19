@@ -56,3 +56,87 @@
   color: var(--success-color);
   margin-top: 1.5rem;
 }
+
+.previewCard {
+  background: var(--background-color, #fff);
+  border-radius: 1rem;
+  box-shadow: 0 0.09rem 0.8rem rgba(100,100,160,0.13);
+  padding: 1.25rem 1.1rem 0.95rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 160px;
+  flex: 1 1 0;
+  transition: transform 0.17s cubic-bezier(.72,-0.11,.44,1.07);
+}
+.previewCard:hover {
+  transform: translateY(-4px) scale(1.035);
+  box-shadow: 0 0.12rem 1.2rem var(--accent-color, #79f);
+}
+
+.previewImg {
+  width: 85px;
+  height: 85px;
+  object-fit: contain;
+  background: #f5f8fc;
+  border-radius: 100vw;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 14px rgba(0,54,255,0.09);
+  border: 3px solid var(--secondary-color, #6fd);
+}
+
+.previewTitle {
+  font-size: 1.07rem;
+  font-weight: 700;
+  color: var(--text-color, #1b2440);
+  margin: 0.5rem 0 0.2rem 0;
+  letter-spacing: 0.04rem;
+  text-align: center;
+}
+.previewPrice {
+  font-size: 1.02rem;
+  color: var(--accent-color, #d347fa);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.carouselButtonsContainer {
+  display: flex;
+  gap: 1.7rem;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem auto 0 auto;
+}
+
+.carouselButtonsContainer button {
+  font-size: 1.47rem;
+  background: var(--secondary-color, #62f);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 2.7rem;
+  height: 2.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0.1rem 0.6rem rgba(70,0,220,0.10);
+  cursor: pointer;
+  transition: background 0.17s;
+}
+
+.carouselButtonsContainer button:hover {
+  background: var(--primary-color, #4a0);
+}
+
+.carouselWrapper {
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  position: relative;
+}
+
+.carouselTrack {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  will-change: transform;
+}

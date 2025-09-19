@@ -53,7 +53,7 @@ describe('Cart Page', () => {
       expect(screen.getByAltText(item.imgAlt)).toBeInTheDocument();
     });
     expect(screen.getAllByTestId('item-price').map(e => e.textContent))
-      .toEqual(expect.arrayContaining([mockCart[0].price.toString(), mockCart[1].price.toString()]));
+      .toEqual(expect.arrayContaining(["$500", "$800"]));
     expect(screen.getAllByTestId('count-display').map(e => e.textContent))
       .toEqual(expect.arrayContaining([mockCart[0].quantity.toString(), mockCart[1].quantity.toString()]));
   });
@@ -67,9 +67,9 @@ describe('Cart Page', () => {
     const incrementBtns = screen.getAllByRole('button', { name: '+' });
     await userEvent.click(incrementBtns[0]);
     expect(screen.getAllByTestId('count-display')[0]).toHaveTextContent('3');
-    expect(screen.getAllByTestId('item-subtotal')[0]).toHaveTextContent('1500');
-    expect(screen.getByTestId('checkout-subtotal')).toHaveTextContent('Subtotal: 2300');
-    expect(screen.getByTestId('order-total')).toHaveTextContent('Total: 2764');
+    expect(screen.getAllByTestId('item-subtotal')[0]).toHaveTextContent('$1500');
+    expect(screen.getByTestId('checkout-subtotal')).toHaveTextContent('Subtotal: $2300');
+    expect(screen.getByTestId('order-total')).toHaveTextContent('Total: $2764');
   });
 
   it('updates item quantity, subtotal, and summary when decrement button is clicked', async () => {
@@ -81,9 +81,9 @@ describe('Cart Page', () => {
     const decrementBtns = screen.getAllByRole('button', { name: '-' });
     await userEvent.click(decrementBtns[0]); // Cool Hat goes from 2 -> 1
     expect(screen.getAllByTestId('count-display')[0]).toHaveTextContent('1');
-    expect(screen.getAllByTestId('item-subtotal')[0]).toHaveTextContent('500');
-    expect(screen.getByTestId('checkout-subtotal')).toHaveTextContent('Subtotal: 1300');
-    expect(screen.getByTestId('order-total')).toHaveTextContent('Total: 1584');
+    expect(screen.getAllByTestId('item-subtotal')[0]).toHaveTextContent('$500');
+    expect(screen.getByTestId('checkout-subtotal')).toHaveTextContent('Subtotal: $1300');
+    expect(screen.getByTestId('order-total')).toHaveTextContent('Total: $1584');
   });
 
   it('removes cart item if quantity reaches zero', async () => {
@@ -96,7 +96,7 @@ describe('Cart Page', () => {
     await userEvent.click(decrementBtns[1]);
     expect(screen.queryByText('Nice Shirt')).not.toBeInTheDocument();
     expect(screen.queryByAltText('A nice shirt')).not.toBeInTheDocument();
-    expect(screen.getByTestId('checkout-subtotal')).toHaveTextContent('Subtotal: 1000'); // (Cool Hat's subtotal if still present)
+    expect(screen.getByTestId('checkout-subtotal')).toHaveTextContent('Subtotal: $1000'); // (Cool Hat's subtotal if still present)
   });
 
   it('removes item from cart when delete button is clicked', async () => {

@@ -48,7 +48,7 @@ export default function CartPage ({ cart = [], onIncrement, onDecrement, onDelet
                     <div data-testid="checkout-shipping">Shipping: ${shipping}</div>
                     <div data-testid="checkout-tax">Tax (18%): ${tax}</div>
                 </div>
-                <div className={styles.totalCost} data-testid="order-total">Total: {total}</div>
+                <div className={styles.totalCost} data-testid="order-total">Total: ${total}</div>
                 <button className={styles.checkoutButton}>Proceed to checkout</button>
             </div>
         </div>

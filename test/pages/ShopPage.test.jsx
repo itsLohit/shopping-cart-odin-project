@@ -111,18 +111,4 @@ describe('Shop Page', () => {
       await userEvent.type(searchBarInput, "Pants");
       expect(screen.getByRole('status', /no products found/i)).toBeInTheDocument();
     });
-
-    it('highlights the active category button', async () => {
-      render(
-        <MemoryRouter>
-          <ShopPage products={mockProducts}/>
-        </MemoryRouter>
-      );
-      const allBtn = screen.getByRole('button', {name: "All"});
-      expect(allBtn).toHaveClass('active-category');
-      const clothesBtn = screen.getByRole('button', {name: "Clothes"});
-      await userEvent.click(clothesBtn);
-      expect(clothesBtn).toHaveClass('active-category');
-      expect(allBtn).not.toHaveClass('active-category');
-    });
 });

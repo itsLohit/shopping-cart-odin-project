@@ -46,7 +46,7 @@ describe('CartItem', () => {
         <CartItem {...mockItem} />
       </MemoryRouter>
     );
-    expect(screen.getByText("500")).toBeInTheDocument();
+    expect(screen.getByText("$500")).toBeInTheDocument();
   });
 
   it('shows the correct quantity (count) display', () => {
@@ -75,7 +75,7 @@ describe('CartItem', () => {
         <CartItem {...mockItem} />
       </MemoryRouter>
     );
-    expect(screen.getByText("1000")).toBeInTheDocument();
+    expect(screen.getByText("Subtotal: $1000")).toBeInTheDocument();
   });
 
   it('increments quantity and updates subtotal when increment button is clicked', async () => {
@@ -86,7 +86,7 @@ describe('CartItem', () => {
       </MemoryRouter>
     );
     expect(screen.getByText("2")).toBeInTheDocument();
-    expect(screen.getByText("1000")).toBeInTheDocument();
+    expect(screen.getByText("Subtotal: $1000")).toBeInTheDocument();
     const incrementBtn = screen.getByRole("button", { name: "+" });
     await userEvent.click(incrementBtn);
     expect(onIncrement).toHaveBeenCalledTimes(1);
@@ -97,7 +97,7 @@ describe('CartItem', () => {
       </MemoryRouter>
     );
     expect(screen.getByText("3")).toBeInTheDocument();
-    expect(screen.getByText("1500")).toBeInTheDocument();
+    expect(screen.getByText("Subtotal: $1500")).toBeInTheDocument();
   });
 
   it('calls onDelete with correct id when delete button is clicked', async () => {

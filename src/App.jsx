@@ -60,7 +60,7 @@ export default function App () {
     const product = products.find((p) => p.id === productId);
     page = <ProductDetailsPage product={product} />;
   } else if (name === "home") {
-    page = <HomePage />;
+    page = <HomePage products={products}/>;
   } else if (name === "shop") {
     page = (
       <ShopPage
@@ -79,7 +79,7 @@ export default function App () {
       />
     );
   } else {
-    page = <HomePage />;
+    page = <HomePage products={products}/>;
   }
 
 
