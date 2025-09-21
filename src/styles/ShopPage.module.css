@@ -6,14 +6,33 @@
   min-height: 80vh;
 }
 
+.shopHeading {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: var(--text-color);
+  margin-bottom: 0.1rem;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+.shopSubtitle {
+  font-size: 1.16rem;
+  color: var(--subtle-text-color);
+  margin-bottom: 2.1rem;
+  text-align: center;
+}
+
+
 .productsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   gap: 2.5rem 2rem;
   width: 100%;
-  max-width: 1200px;
+  max-width: 80rem;
   margin-top: 2.4rem;
+  align-items: stretch;
 }
+
 
 .filterSection {
   width: 100%;
@@ -31,3 +50,4 @@
   font-weight: 700;
   text-align: center;
 }
+

@@ -9,8 +9,8 @@
 }
 
 .itemsContainer {
-  width: 40rem;
-  max-width: 650px;
+  min-width: 50rem;
+  max-width: 70rem;
   display: flex;
   flex-direction: column;
   margin-right: 1.3rem;
@@ -46,7 +46,10 @@
   border: 2px solid var(--border-color);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  position: sticky;
+  top: 85px; 
+  z-index: 3;
 }
 
 .checkoutBoxHeading {

@@ -27,8 +27,14 @@ export default function App () {
 }, []);
 
   const { name, productId } = useParams();
-  const initialCart = [];
-  const [cart, setCart] = useState(initialCart);
+  const [cart, setCart] = useState(() => {
+    const stored = localStorage.getItem("cart");
+    return stored ? JSON.parse(stored) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   function handleAddToCart(product) {
     setCart(cart => {
@@ -70,7 +76,12 @@ export default function App () {
         setCart(
           cart.filter(item => item.id !== id)
         );
-    }
+  }
+  
+  console.log(products.map(p => p.category && p.category.name));
+
+  if (loading) return <div>Loading products...</div>;
+  if (error) return <div>{error}</div>;
 
   let page;
   if (productId) {
@@ -100,6 +111,8 @@ export default function App () {
   }
 
 
+  if (loading) return <div>Loading products...</div>;
+  if (error) return <div>{error}</div>;
 
     return (
         <>

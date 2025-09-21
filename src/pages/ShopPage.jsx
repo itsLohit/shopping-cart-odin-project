@@ -29,6 +29,10 @@ export default function ShopPage ({products = [], onAddToCart}) {
 
     return (
         <div className={styles.shopContainer}>
+          <h1 className={styles.shopHeading}>All Your Essentials, In One Place</h1>
+          <div className={styles.shopSubtitle}>
+            Handpicked products with honest pricing, trusted by thousands of happy customers.
+          </div>
           <div className={styles.filterSection}>
             <SearchBar
               onSearchChange={handleSearchTermChange}
@@ -43,6 +47,7 @@ export default function ShopPage ({products = [], onAddToCart}) {
             ) : (
               displayedProducts.map(product => (
                 <Products
+                key={product.id}
                   id={product.id}
                   title={product.title}
                   imgSrc={product.images[0]}
