@@ -3,29 +3,30 @@ import styles from "../styles/HomePage.module.css";
 import { Link } from "react-router";
 
 export default function HomePage({ products = [] }) {
-  const [carouselIndex, setCarouselIndex] = useState(0);
   const cardCount = Math.min(3, products.length);
+  const totalGroups = Math.ceil(products.length / cardCount); 
+  const [carouselIndex, setCarouselIndex] = useState(0);
 
   function handlePrevClick() {
     setCarouselIndex((index) =>
-      products.length <= 3 ? 0 : (index - 1 + products.length) % products.length
+      totalGroups <= 1 ? 0 : (index - 1 + totalGroups) % totalGroups
     );
   }
 
   function handleNextClick() {
     setCarouselIndex((index) =>
-      products.length <= 3 ? 0 : (index + 1) % products.length
+      totalGroups <= 1 ? 0 : (index + 1) % totalGroups
     );
   }
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCarouselIndex((index) =>
-        products.length <= 3 ? 0 : (index + 1) % products.length
+        totalGroups <= 1 ? 0 : (index + 1) % totalGroups
       );
     }, 3000);
     return () => clearInterval(intervalId);
-  }, [products.length]);
+  }, [totalGroups]);
 
   return (
     <main className={styles.homeHero}>
@@ -46,7 +47,8 @@ export default function HomePage({ products = [] }) {
         <div
           className={styles.carouselTrack}
           style={{
-            transform: `translateX(-${carouselIndex * (100 / cardCount)}%)`,
+            transform: `translateX(-${carouselIndex * 100}%)`,
+            transition: "transform 0.5s ease", 
           }}
         >
           {products.map((product) => (
