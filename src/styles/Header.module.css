@@ -2,9 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--accent-color);
-  padding: 1.25rem 2rem;
-  box-shadow: 0 0.2rem 1.5rem rgba(0,0,0,0.08); 
+  background: var(--background-color, #fff);
+  padding: 1.1rem 2.4rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: box-shadow 0.2s;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo {
@@ -32,6 +36,16 @@
 .navLink:hover, .navLink.active {
   color: var(--primary-color);
   border-bottom: 0.2rem solid var(--primary-color);
+}
+
+.cartNav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.cartNav img {
+  width: 1.5rem;
+  filter: invert(31%) sepia(38%) saturate(6012%) hue-rotate(251deg) brightness(97%) contrast(109%);
 }
 
 .cartBadge {

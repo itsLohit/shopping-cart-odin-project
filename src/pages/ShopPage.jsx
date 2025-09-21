@@ -18,10 +18,13 @@ export default function ShopPage ({products = [], onAddToCart}) {
   }
   
   const displayedProducts = products.filter(product => {
-    const matchesCategory = activeCategory === 'All' || product.category === activeCategory;
+    const matchesCategory =
+      activeCategory === 'All' ||
+      (product.category && product.category.name === activeCategory);
     const matchesSearch = product.title.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesCategory && matchesSearch;
   });
+
   
 
     return (
@@ -40,11 +43,10 @@ export default function ShopPage ({products = [], onAddToCart}) {
             ) : (
               displayedProducts.map(product => (
                 <Products
-                  key={product.id}
                   id={product.id}
                   title={product.title}
-                  imgSrc={product.imgSrc}
-                  imgAlt={product.imgAlt}
+                  imgSrc={product.images[0]}
+                  imgAlt={product.title}
                   price={product.price}
                   onAddToCart = {onAddToCart}
                 />

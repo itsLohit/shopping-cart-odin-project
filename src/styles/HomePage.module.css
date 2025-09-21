@@ -8,8 +8,36 @@
   background: linear-gradient(120deg, var(--accent-color) 70%, var(--neon-purple) 100%);
   border-radius: 0.7rem;
   margin: 3rem auto;
-  max-width: 800px;
+  max-width: 90vw;
   box-shadow: 0 0.3rem 1.2rem rgba(0,0,0,0.12);
+}
+
+.topContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 2rem;
+  min-height: 75vh;
+}
+
+.topContainer > div{
+  max-width: 50rem;
+  margin-left: 3rem;
+}
+
+.topContainer > img{
+  max-width: 50rem;
+  margin-left: 3rem;
+  min-height: 60vh;
+  width: auto;
+}
+
+.heroTopLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
 .mainHeading {
@@ -30,6 +58,14 @@
   padding: 1.1rem 2rem;
   margin-bottom: 2rem;
   box-shadow: 0 0.1rem 0.5rem var(--accent-color);
+}
+
+.homeBadge {
+  font-size: 1.22rem;
+  color: var(--text-color);
+  border-radius: 0.4rem;
+  padding: 1.1rem 2rem;
+  text-align: center;
 }
 
 .ctaButton {
@@ -65,9 +101,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 160px;
   flex: 1 1 0;
   transition: transform 0.17s cubic-bezier(.72,-0.11,.44,1.07);
+  min-height: 15rem;
 }
 .previewCard:hover {
   transform: translateY(-4px) scale(1.035);
@@ -102,9 +138,9 @@
 .carouselButtonsContainer {
   display: flex;
   gap: 1.7rem;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin: 1.5rem auto 0 auto;
+  margin: 1rem auto 0 auto;
 }
 
 .carouselButtonsContainer button {
@@ -112,8 +148,8 @@
   background: var(--secondary-color, #62f);
   color: #fff;
   border: none;
-  border-radius: 50%;
-  width: 2.7rem;
+  border-radius: 1rem;
+  min-width: 2.7rem;
   height: 2.7rem;
   display: flex;
   justify-content: center;
@@ -130,7 +166,7 @@
 .carouselWrapper {
   overflow: hidden;
   width: 100%;
-  max-width: 800px;
+  max-width: 100rem;
   margin: 2rem auto;
   position: relative;
 }
@@ -139,4 +175,132 @@
   display: flex;
   transition: transform 0.6s ease-in-out;
   will-change: transform;
+  min-height: 17rem;
+  align-items: center;
+}
+
+.promoBanner {
+  background: linear-gradient(96deg, #ffe57e 60%, #ffb5e6 100%);
+  padding: 1.3rem 2rem;
+  border-radius: 0.55rem;
+  text-align: center;
+  margin: 5rem 0 1rem 0;
+  box-shadow: 0 1px 10px rgba(190,197,0,0.10);
+  min-width: 50rem;
+  min-height: 10rem;
+}
+.promoTitle {
+  font-size: 1.31rem;
+  font-weight: 800;
+  color: #2b2b1f;
+}
+.promoHighlight {
+  color: #c61aff;
+  font-weight: 900;
+}
+.countdownRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 0.8rem;
+}
+.countdownTimer {
+  font-size: 1.47rem;
+  font-weight: 700;
+  color: #f43;
+  background: #fffde9;
+  border-radius: 0.33rem;
+  padding: 0.35rem 1.2rem;
+}
+.promoCta {
+  background: #f43;
+  color: #fff;
+  font-weight: 800;
+  border: none;
+  padding: 0.63rem 1.9rem;
+  border-radius: 0.65rem;
+  font-size: 1.19rem;
+  cursor: pointer;
+}
+.promoCta:hover {
+  background: #c61aff;
+}
+.shippingBanner {
+  margin: 1rem 0 1.6rem 0;
+  background: #d2ffea;
+  color: #054c2a;
+  font-weight: 700;
+  font-size: 1.12rem;
+  border-radius: 0.45rem;
+  padding: 0.57rem 1.45rem;
+}
+
+.socialProofSection {
+  margin-top: 5rem;
+  text-align: center;
+}
+.socialProofHeading {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 1.3rem;
+}
+.reviewGrid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1.6rem;
+}
+.reviewCard {
+  background: #fff8e4;
+  border-radius: 0.68rem;
+  max-width: 320px;
+  box-shadow: 0 2px 15px rgba(50,20,20,0.10);
+  padding: 1.13rem 1.3rem;
+  font-size: 1.01rem;
+  color: #2e0d78;
+  border-left: 8px solid #f47e20;
+  text-align: left;
+}
+.reviewerName {
+  font-weight: 900;
+  color: #10a097;
+  font-size: 0.93rem;
+  margin-top: 0.6rem;
+  display: inline-block;
+}
+.urgencyNotification {
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+  color: #f43a2c;
+  font-weight: 700;
+  background: #fffde7;
+  border-radius: 0.38rem;
+  display: inline-block;
+  padding: 0.17rem 1.09rem;
+}
+.urgencyHighlight {
+  font-weight: 900;
+  color: #ac1e66;
+}
+.mediaMentions {
+  margin-top: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+.asFeatured {
+  font-size: 1.09rem;
+  color: #555;
+  margin-right: 0.7rem;
+}
+.mediaLogo {
+  height: 32px;
+  object-fit: contain;
+  margin-right: 0.25rem;
+  opacity: 0.92;
+  vertical-align: middle;
 }

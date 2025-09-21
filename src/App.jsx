@@ -1,6 +1,5 @@
 import { useParams } from "react-router";
-import { useState } from "react";
-import products from "./data/products";
+import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
 import ShopPage from "./pages/ShopPage";
@@ -9,6 +8,24 @@ import ProductDetailsPage from "./pages/ProductDetailsPage";
 
 
 export default function App () {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+  setLoading(true);
+  fetch('https://api.escuelajs.co/api/v1/products')
+    .then(res => res.json())
+    .then(data => {
+      setProducts(data);
+      setLoading(false);
+    })
+    .catch(() => {
+      setError("Failed to load products from API");
+      setLoading(false);
+    });
+}, []);
+
   const { name, productId } = useParams();
   const initialCart = [];
   const [cart, setCart] = useState(initialCart);
@@ -57,8 +74,8 @@ export default function App () {
 
   let page;
   if (productId) {
-    const product = products.find((p) => p.id === productId);
-    page = <ProductDetailsPage product={product} />;
+    const product = products.find((p) => String(p.id) === String(productId));
+    page = <ProductDetailsPage product={product} onAddToCart={handleAddToCart} products={products}/>;
   } else if (name === "home") {
     page = <HomePage products={products}/>;
   } else if (name === "shop") {
