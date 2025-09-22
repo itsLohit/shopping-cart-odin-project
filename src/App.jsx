@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import ShopPage from "./pages/ShopPage";
 import CartPage from "./pages/CartPage";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
+import { allProducts } from "./data/products";
 
 
 export default function App () {
@@ -17,7 +18,12 @@ export default function App () {
   fetch('https://api.escuelajs.co/api/v1/products')
     .then(res => res.json())
     .then(data => {
-      setProducts(data);
+      if(allProducts) {
+        setProducts(allProducts);
+      } else {
+        setProducts(data);
+      }
+      
       setLoading(false);
     })
     .catch(() => {
