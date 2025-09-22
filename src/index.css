@@ -1,19 +1,23 @@
 :root {
-  --background-color: #0a0a0f;
-  --text-color: #e8e8ff;
-  --card-bg-color: #1a1a2e;
-  --primary-color: #ff3d71;
-  --primary-hover: #e6356a;
-  --secondary-color: #4ecdc4;
-  --border-color: #2a2a44;
-  --subtle-text-color: #9d9daa;
-  --accent-color: #16213e;
-  --success-color: #a8ff35;
-  --warning-color: #ffa726;
-  --neon-purple: #c44df0;
-  --electric-blue: #00d4ff;
-  --cyber-pink: #ff006e;
+  --background-color: #f4efe8;
+  --text-color: #232323;
+  --card-bg-color: #fff6ea;
+  --primary-color: #b98020;
+  --primary-hover: #915c16;
+  --secondary-color: #152448;    /* NEW: classic navy for high-contrast luxury */
+  --border-color: #dad3c5;
+  --subtle-text-color: #616161;
+  --accent-color: #d5aa9f;
+  --success-color: #297b46;
+  --warning-color: #f2c46d;
+  --neon-purple: #7c3fc6;
+  --electric-blue: #2364aa;      /* deeper blue accent for links/buttons if needed */
+  --cyber-pink: #ed3c6d;
+  --header-bg-color: #efe5ce;
 }
+
+
+
 
 
 

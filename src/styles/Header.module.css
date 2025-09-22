@@ -2,13 +2,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--background-color, #fff);
+  background: var(--header-bg-color);
   padding: 1.1rem 2.4rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px rgba(35,35,35,0.07);
   transition: box-shadow 0.2s;
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 2px solid var(--primary-color);
 }
 
 .logo {
@@ -114,6 +115,7 @@
   .cartBadge {
     display: inline-block;
     min-width: 1.5rem;     
+    text-align: center;
     background: var(--primary-color);
     color: white;
     font-weight: 700;
