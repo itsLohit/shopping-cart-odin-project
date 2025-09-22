@@ -98,3 +98,48 @@ button:hover {
 .deleteButton:hover {
   background: var(--cyber-pink);
 }
+
+
+@media (max-width: 600px) {
+  .cartItem {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .itemHeading h2 {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  .itemPriceContainer {
+    align-items: baseline;
+    justify-content: center;
+  }
+
+  .deleteButton {
+    margin: 0;
+  }
+}
+
+@media (max-width: 1370px) {
+  .cartItem {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .itemHeading h2 {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  .itemPriceContainer {
+    align-items: baseline;
+    justify-content: center;
+  }
+
+  .deleteButton {
+    margin: 0;
+  }
+}

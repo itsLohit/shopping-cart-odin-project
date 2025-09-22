@@ -1,6 +1,7 @@
 import styles from '../styles/Products.module.css';
 import { useState } from "react"
-import { Link } from "react-router"
+import { Link } from "react-router";
+import PropTypes from 'prop-types';
 
 export default function Products ({title, imgSrc, imgAlt, price, onAddToCart, id}) {
 
@@ -51,3 +52,12 @@ export default function Products ({title, imgSrc, imgAlt, price, onAddToCart, id
         </article>
     )
 }
+
+Products.propTypes = {
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  title: PropTypes.string.isRequired,
+  imgSrc: PropTypes.string,
+  imgAlt: PropTypes.string,
+  price: PropTypes.number.isRequired,
+  onAddToCart: PropTypes.func,
+};

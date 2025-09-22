@@ -1,5 +1,6 @@
 import styles from '../styles/CartItem.module.css';
 import { Link } from "react-router";
+import PropTypes from "prop-types";
 
 export default function CartItem ({id, title, imgSrc, imgAlt, price, quantity, onIncrement, onDecrement, onDelete}) {
 
@@ -40,3 +41,15 @@ export default function CartItem ({id, title, imgSrc, imgAlt, price, quantity, o
         </div>
     )
 }
+
+CartItem.propTypes = {
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  title: PropTypes.string.isRequired,
+  imgSrc: PropTypes.string,
+  imgAlt: PropTypes.string,
+  price: PropTypes.number.isRequired,
+  quantity: PropTypes.number.isRequired,
+  onIncrement: PropTypes.func,
+  onDecrement: PropTypes.func,
+  onDelete: PropTypes.func,
+};

@@ -234,7 +234,6 @@
 
 
 
-/* Responsive styles */
 @media (max-width: 1040px) {
   .detailsContainer, .productDetailsContainer {
     flex-direction: column;
@@ -258,7 +257,7 @@
 @media (max-width: 640px) {
   .detailsSection { padding: 1rem 0.5rem 1.2rem 0.5rem; }
   .gallerySection { gap: 0.55rem; }
-  .mainImage { width: 97vw; height: 42vw; min-height: 120px; max-width: 99vw; }
+  .mainImage { min-width: 97vw; min-height: 25rem;  max-width: 95vw; }
   .thumbnailsRow { gap: 0.35rem; }
-  .thumbnail { width: 39px; height: 39px; }
+  .thumbnail { min-width: 4rem; }
 }

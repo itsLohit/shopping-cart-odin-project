@@ -304,3 +304,319 @@
   opacity: 0.92;
   vertical-align: middle;
 }
+
+
+@media (max-width: 600px) { 
+
+  .mainHeading {
+    font-size: 2rem;
+    min-width: 20rem;
+  }
+  
+  .homeDescription {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .homeBadge {
+    font-size: 1.22rem;
+    color: var(--text-color);
+    border-radius: 0.4rem;
+    padding: 1.1rem 2rem;
+    text-align: center;
+  }
+  .topContainer {
+    flex-direction: column;
+  }
+  
+  .topContainer > div{
+    margin-left: 0rem;
+  }
+  
+  .topContainer > img{
+    max-width: 25rem;
+    margin-left: 0rem;
+    min-height: 40vh;
+  }
+  
+  .previewCard {
+    min-height: 20rem;
+    min-width: 10rem;
+  }
+  
+  .carouselTrack {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+    will-change: transform;
+    min-height: 20rem;
+    align-items: center;
+  }
+  
+  .promoBanner {
+    min-width: 20rem;
+  }
+  .promoTitle {
+    font-size: 1.31rem;
+    font-weight: 800;
+    color: #2b2b1f;
+  }
+  .promoHighlight {
+    color: #c61aff;
+    font-weight: 900;
+  }
+  .countdownRow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 0.8rem;
+  }
+  .countdownTimer {
+    font-size: 1.47rem;
+    font-weight: 700;
+    color: #f43;
+    background: #fffde9;
+    border-radius: 0.33rem;
+    padding: 0.35rem 1.2rem;
+  }
+  .promoCta {
+    background: #f43;
+    color: #fff;
+    font-weight: 800;
+    border: none;
+    padding: 0.63rem 1.9rem;
+    border-radius: 0.65rem;
+    font-size: 1.19rem;
+    cursor: pointer;
+  }
+  .promoCta:hover {
+    background: #c61aff;
+  }
+  .shippingBanner {
+    margin: 1rem 0 1.6rem 0;
+    background: #d2ffea;
+    color: #054c2a;
+    font-weight: 700;
+    font-size: 1.12rem;
+    border-radius: 0.45rem;
+    padding: 0.57rem 1.45rem;
+  }
+  
+  .socialProofSection {
+    margin-top: 5rem;
+    text-align: center;
+  }
+  .socialProofHeading {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 1.3rem;
+  }
+  .reviewGrid {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1.6rem;
+  }
+  .reviewCard {
+    background: #fff8e4;
+    border-radius: 0.68rem;
+    max-width: 320px;
+    box-shadow: 0 2px 15px rgba(50,20,20,0.10);
+    padding: 1.13rem 1.3rem;
+    font-size: 1.01rem;
+    color: #2e0d78;
+    border-left: 8px solid #f47e20;
+    text-align: left;
+  }
+  .reviewerName {
+    font-weight: 900;
+    color: #10a097;
+    font-size: 0.93rem;
+    margin-top: 0.6rem;
+    display: inline-block;
+  }
+  .urgencyNotification {
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    color: #f43a2c;
+    font-weight: 700;
+    background: #fffde7;
+    border-radius: 0.38rem;
+    display: inline-block;
+    padding: 0.17rem 1.09rem;
+  }
+  .urgencyHighlight {
+    font-weight: 900;
+    color: #ac1e66;
+  }
+  .mediaMentions {
+    margin-top: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+  .asFeatured {
+    font-size: 1.09rem;
+    color: #555;
+    margin-right: 0.7rem;
+  }
+  .mediaLogo {
+    height: 32px;
+    object-fit: contain;
+    margin-right: 0.25rem;
+    opacity: 0.92;
+    vertical-align: middle;
+  }
+}
+
+@media (max-width: 1370px) { 
+  .topContainer {
+    flex-direction: column;
+  }
+  
+  .topContainer > div{
+    margin-left: 0rem;
+  }
+  
+  .topContainer > img{
+    max-width: 25rem;
+    margin-left: 0rem;
+    min-height: 40vh;
+  }
+  
+  .previewCard {
+    min-height: 20rem;
+    min-width: 10rem;
+  }
+  
+  .carouselTrack {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+    will-change: transform;
+    min-height: 20rem;
+    align-items: center;
+  }
+  
+  .promoBanner {
+    min-width: 20rem;
+  }
+  .promoTitle {
+    font-size: 1.31rem;
+    font-weight: 800;
+    color: #2b2b1f;
+  }
+  .promoHighlight {
+    color: #c61aff;
+    font-weight: 900;
+  }
+  .countdownRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 0.8rem;
+  }
+  .countdownTimer {
+    font-size: 1.47rem;
+    font-weight: 700;
+    color: #f43;
+    background: #fffde9;
+    border-radius: 0.33rem;
+    padding: 0.35rem 1.2rem;
+  }
+  .promoCta {
+    background: #f43;
+    color: #fff;
+    font-weight: 800;
+    border: none;
+    padding: 0.63rem 1.9rem;
+    border-radius: 0.65rem;
+    font-size: 1.19rem;
+    cursor: pointer;
+  }
+  .promoCta:hover {
+    background: #c61aff;
+  }
+  .shippingBanner {
+    margin: 1rem 0 1.6rem 0;
+    background: #d2ffea;
+    color: #054c2a;
+    font-weight: 700;
+    font-size: 1.12rem;
+    border-radius: 0.45rem;
+    padding: 0.57rem 1.45rem;
+  }
+  
+  .socialProofSection {
+    margin-top: 5rem;
+    text-align: center;
+  }
+  .socialProofHeading {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 1.3rem;
+  }
+  .reviewGrid {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1.6rem;
+  }
+  .reviewCard {
+    background: #fff8e4;
+    border-radius: 0.68rem;
+    max-width: 320px;
+    box-shadow: 0 2px 15px rgba(50,20,20,0.10);
+    padding: 1.13rem 1.3rem;
+    font-size: 1.01rem;
+    color: #2e0d78;
+    border-left: 8px solid #f47e20;
+    text-align: left;
+  }
+  .reviewerName {
+    font-weight: 900;
+    color: #10a097;
+    font-size: 0.93rem;
+    margin-top: 0.6rem;
+    display: inline-block;
+  }
+  .urgencyNotification {
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    color: #f43a2c;
+    font-weight: 700;
+    background: #fffde7;
+    border-radius: 0.38rem;
+    display: inline-block;
+    padding: 0.17rem 1.09rem;
+  }
+  .urgencyHighlight {
+    font-weight: 900;
+    color: #ac1e66;
+  }
+  .mediaMentions {
+    margin-top: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+  .asFeatured {
+    font-size: 1.09rem;
+    color: #555;
+    margin-right: 0.7rem;
+  }
+  .mediaLogo {
+    height: 32px;
+    object-fit: contain;
+    margin-right: 0.25rem;
+    opacity: 0.92;
+    vertical-align: middle;
+  }
+}

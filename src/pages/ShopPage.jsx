@@ -47,7 +47,7 @@ export default function ShopPage ({products = [], onAddToCart}) {
             ) : (
               displayedProducts.map(product => (
                 <Products
-                key={product.id}
+                  key={product.id}
                   id={product.id}
                   title={product.title}
                   imgSrc={product.images[0]}

@@ -6,7 +6,7 @@ export default function CartPage ({ cart = [], onIncrement, onDecrement, onDelet
 
     if (cart.length === 0) {
       return (
-        <div className="empty-cart-message">
+        <div className={styles.emptyCartMessage}>
           Your cart is empty.
         </div>
       )

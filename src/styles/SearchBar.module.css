@@ -54,3 +54,40 @@
   color: #fff;
   border: 1.5px solid var(--primary-color);
 }
+
+
+@media (max-width: 600px) {
+  .filterSection {
+    flex-direction: column;
+  }
+  
+  .searchBar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    text-align: center;
+  }
+
+  .filterButtons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1370px) {
+  .filterSection {
+    flex-direction: column;
+  }
+  
+  .searchBar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    text-align: center;
+  }
+
+  .filterButtons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
