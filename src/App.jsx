@@ -6,6 +6,7 @@ import ShopPage from "./pages/ShopPage";
 import CartPage from "./pages/CartPage";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
 import { allProducts } from "./data/products";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 export default function App () {
@@ -122,7 +123,7 @@ export default function App () {
 
     return (
         <>
-
+          <ScrollToTop />
           <Header 
             cart={cart}
           />
